@@ -35,7 +35,7 @@ RUN pip install opencv-python-headless
 RUN pip install pycocotools
 RUN pip install natsort
 RUN sudo apt-get install libyaml-dev
-RUN sudo apt-get install python3.7-tk
+RUN sudo apt-get install python3.7-tk -y
 
 # ####################################################################################
 # EXPOSE 22
