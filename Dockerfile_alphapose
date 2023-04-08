@@ -1,0 +1,46 @@
+FROM pytorchlightning/pytorch_lightning:base-cuda-py3.7-torch1.12-cuda11.3.1
+# Install some basic utilities
+RUN apt-get update 
+RUN apt-get install -y \
+    git \
+    zip \
+    sudo \
+    libx11-6 \
+    build-essential \
+    ca-certificates \
+    wget \
+    curl \
+    tmux \
+    htop \
+    nano \
+    vim 
+
+# ####################################################################################
+# Create a non-root user and switch to it
+#RUN adduser --disabled-password --gecos '' --shell /bin/bash user
+#RUN echo "user ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/90-user
+#USER user
+
+# Basic Deep Leaning
+RUN pip install --upgrade pip
+RUN pip install torch torchvision torchaudio
+RUN pip install wandb
+RUN pip install lightning
+RUN pip install easydict
+RUN pip install scikit-image
+RUN pip install pyyaml
+RUN pip install requests
+RUN pip install cython
+RUN pip install opencv-python-headless
+RUN pip install pycocotools
+RUN pip install natsort
+RUN sudo apt-get install libyaml-dev
+
+
+# ####################################################################################
+# EXPOSE 22
+# RUN sudo apt-get install -y \
+#     openssh-server
+
+WORKDIR ~/home
+CMD bash
