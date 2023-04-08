@@ -40,7 +40,7 @@ python setup.py build develop
 mv scripts/demo_inference.py .
 python demo_inference.py --cfg configs/coco/resnet/256x192_res50_lr1e-3_1x.yaml --checkpoint pretrained_models/fast_res50_256x192.pth --indir examples/demo/
 ```
-8. Inference with other model
+8. Inference with other model.
 - Please check the official document to download other models in [Model_ZOO](https://github.com/MVIG-SJTU/AlphaPose/blob/master/docs/MODEL_ZOO.md).
 ## Citation
 ---
